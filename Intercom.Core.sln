@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.15
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intercom.Core", "Intercom.Core\Intercom.Core.csproj", "{B8AD6C65-6632-4592-9C7E-A3DD2475FAAD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B8AD6C65-6632-4592-9C7E-A3DD2475FAAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8AD6C65-6632-4592-9C7E-A3DD2475FAAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8AD6C65-6632-4592-9C7E-A3DD2475FAAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8AD6C65-6632-4592-9C7E-A3DD2475FAAD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A847DCFE-6774-450C-906F-F35B51B66945}
+	EndGlobalSection
+EndGlobal
