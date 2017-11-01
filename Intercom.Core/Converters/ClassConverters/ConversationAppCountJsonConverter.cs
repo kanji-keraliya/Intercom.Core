@@ -3,10 +3,6 @@ using Intercom.Core;
 using Intercom.Data;
 using Intercom.Clients;
 using Intercom.Exceptions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using RestSharp;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
