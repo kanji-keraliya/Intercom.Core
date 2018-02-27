@@ -7,17 +7,17 @@
     <Authors>Kanji Keraliya</Authors>
     <Company>Kanji Keraliya</Company>
     <Description>The Intercom sdk for .net core</Description>
-    <Copyright>Copyright 2017</Copyright>
+    <Copyright>Copyright 2018</Copyright>
     <PackageLicenseUrl>https://opensource.org/licenses/mit-license.php</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/kanji-keraliya/Intercom.Core</PackageProjectUrl>
     <PackageIconUrl>https://avatars2.githubusercontent.com/u/6585?s=200</PackageIconUrl>
     <RepositoryUrl>https://github.com/kanji-keraliya/Intercom.Core</RepositoryUrl>
     <PackageTags>intercom,core</PackageTags>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <AssemblyVersion>1.0.0.1</AssemblyVersion>
-    <FileVersion>1.0.0.1</FileVersion>
+    <AssemblyVersion>1.0.0.2</AssemblyVersion>
+    <FileVersion>1.0.0.2</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
