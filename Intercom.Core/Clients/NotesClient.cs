@@ -8,6 +8,8 @@ using Intercom.Core;
 using Intercom.Data;
 using Intercom.Exceptions;
 using Newtonsoft.Json;
+using RestSharp;
+using RestSharp.Authenticators;
 
 namespace Intercom.Clients
 {

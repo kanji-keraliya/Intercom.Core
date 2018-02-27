@@ -13,6 +13,14 @@ namespace Intercom.Data
 {
     public class AdminConversationReply : Reply
     {
+        public string type
+        {
+            get
+            {
+                return Reply.ReplySenderType.ADMIN;
+            }
+        }
+
         public String admin_id { set; get; }
 
         public String assignee_id { set; get; }

@@ -9,6 +9,22 @@ namespace Intercom.Data
 {
     public class UserConversationReply : Reply
     {
+        public string type
+        {
+            get
+            {
+                return Reply.ReplySenderType.USER;
+            }
+        }
+
+        public String message_type
+        { 
+            get
+            { 
+                return Reply.ReplyMessageType.COMMENT; 
+            }
+        }
+
         public String email { set; get; }
 
         public String user_id { set; get; }
