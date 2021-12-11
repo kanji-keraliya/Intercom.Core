@@ -1,6 +1,8 @@
 ﻿using System;
 using Intercom.Core;
 using System.Collections.Generic;
+using Newtonsoft.Json;
+using Intercom.Converters.AttributeConverters;
 
 namespace Intercom.Data
 {
@@ -14,12 +16,14 @@ namespace Intercom.Data
         public long? created_at { get; set; }
         public long? updated_at { get; set; }
         public long? last_request_at { get; set; }
-        public int? monthly_spend { get; set; }
+        public decimal? monthly_spend { get; set; }
         public int? session_count { get; set; }
         public int? user_count { get; set; }
         public int? size { get; set; }
         public string website { get; set; }
         public string industry { get; set; }
         public Dictionary<String, Object> custom_attributes { get; set; }
+        [JsonConverter(typeof(ListJsonConverter))]
+        public List<Tag> tags { get; set; }
     }
 }

@@ -6,6 +6,7 @@ using System.Linq;
 using Intercom.Core;
 using Intercom.Data;
 using Intercom.Exceptions;
+using Intercom.Factories;
 using RestSharp;
 using RestSharp.Authenticators;
 
@@ -17,26 +18,33 @@ namespace Intercom.Clients
         private const String MESSAGES_RESOURCE = "messages";
         private const String REPLY_RESOURCE = "reply";
 
+        public AdminConversationsClient(RestClientFactory restClientFactory)
+            : base(CONVERSATIONS_RESOURCE, restClientFactory)
+        {
+        }
+
+        [Obsolete("This constructor is deprecated as of 3.0.0 and will soon be removed, please use AdminConversationsClient(RestClientFactory restClientFactory)")]
         public AdminConversationsClient(Authentication authentication)
             : base(INTERCOM_API_BASE_URL, CONVERSATIONS_RESOURCE, authentication)
         {
         }
 
+        [Obsolete("This constructor is deprecated as of 3.0.0 and will soon be removed, please use AdminConversationsClient(RestClientFactory restClientFactory)")]
         public AdminConversationsClient(String intercomApiUrl, Authentication authentication)
             : base(String.IsNullOrEmpty(intercomApiUrl) ? INTERCOM_API_BASE_URL : intercomApiUrl, CONVERSATIONS_RESOURCE, authentication)
         {
         }
 
-        public ConversationPart Reply(AdminConversationReply reply)
+        public Conversation Reply(AdminConversationReply reply)
         {
             if (reply == null)
             {
                 throw new ArgumentNullException(nameof(reply));
             }
 
-            ClientResponse<ConversationPart> result = null;
+            ClientResponse<Conversation> result = null;
             String body = Serialize<AdminConversationReply>(reply);
-            result = Post<ConversationPart>(body, resource: CONVERSATIONS_RESOURCE + Path.DirectorySeparatorChar + reply.conversation_id + Path.DirectorySeparatorChar + REPLY_RESOURCE);
+            result = Post<Conversation>(body, resource: CONVERSATIONS_RESOURCE + Path.DirectorySeparatorChar + reply.conversation_id + Path.DirectorySeparatorChar + REPLY_RESOURCE);
             return result.Result;
         }
 
@@ -82,6 +90,19 @@ namespace Intercom.Clients
             parameters.Add(Constants.ADMIN_ID, admin.id);
 
             result = Get<Conversations>(parameters: parameters);
+            return result.Result;
+        }
+
+        public Conversation ReplyLastConversation(AdminLastConversationReply lastConversationReply)
+        {
+            if (lastConversationReply.intercom_user_id == null)
+            {
+                throw new ArgumentNullException(nameof(lastConversationReply.intercom_user_id));
+            }
+
+            ClientResponse<Conversation> result = null;
+            String body = Serialize<AdminLastConversationReply>(lastConversationReply);
+            result = Post<Conversation>(body, resource: CONVERSATIONS_RESOURCE + Path.DirectorySeparatorChar + "last" + Path.DirectorySeparatorChar + REPLY_RESOURCE);
             return result.Result;
         }
     }
